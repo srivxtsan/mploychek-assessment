@@ -42,3 +42,9 @@ mploychek-assessment/
         │   ├── login/     # Login UI, forms, and validation handler
         │   └── dashboard/ # Data grid, rendering engine, and session guards
         └── main.ts        # SPA bootstrap layout entry point
+
+
+
+
+### 🎥 Video Demonstration
+[👉 Click Here to Watch the Live Full-Stack Application Walkthrough Demo 🚀](https://drive.google.com/file/d/1STGbFKLoNEDD-ilRiBZ5fzgohXuDQl9s/view?usp=sharing)
