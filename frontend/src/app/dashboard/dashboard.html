@@ -1,0 +1,78 @@
+<div class="dashboard-wrapper">
+
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <span class="brand-icon">🔍</span>
+      <span class="brand-name">MPloyChek Portal</span>
+    </div>
+    <div class="navbar-user">
+      <div class="user-info">
+        <span class="user-name">{{ userName }}</span>
+        <span class="user-role-badge" [class.admin-badge]="userRole === 'Admin'">{{ userRole }}</span>
+      </div>
+      <button class="logout-btn" (click)="logout()">Logout</button>
+    </div>
+  </nav>
+
+  <main class="dashboard-main">
+
+    <div class="loading-container" *ngIf="isLoading">
+      <div class="spinner"></div>
+      <p class="loading-title">Fetching Verification Records</p>
+      <p class="loading-subtitle">Fetching background verification data from API (2.5s simulated delay)...</p>
+    </div>
+
+    <div class="fetch-error" *ngIf="fetchError">
+      <span>⚠️</span> {{ fetchError }}
+    </div>
+
+    <div class="table-container" *ngIf="!isLoading && !fetchError && records && records.length > 0">
+      <div class="table-header">
+        <h2>Background Verification Records</h2>
+        <span class="record-count">{{ records.length }} record(s) found</span>
+      </div>
+
+      <div class="admin-notice" *ngIf="userRole === 'Admin'">
+        <span class="admin-icon">🛡️</span>
+        Admin Access — viewing all records across all users
+      </div>
+
+      <table class="records-table">
+        <thead>
+          <tr>
+            <th>Record ID</th>
+            <th *ngIf="userRole === 'Admin'">User</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th *ngIf="userRole !== 'Admin'">Last Updated</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let record of records">
+            <td><span class="record-id">{{ record.id }}</span></td>
+            <td *ngIf="userRole === 'Admin'">{{ record.user }}</td>
+            <td>{{ record.type }}</td>
+            <td>
+              <span class="status-badge"
+                [class.status-completed]="record.status === 'Completed'"
+                [class.status-progress]="record.status === 'In Progress'"
+                [class.status-pending]="record.status === 'Pending'">
+                {{ record.status }}
+              </span>
+            </td>
+            <td *ngIf="userRole !== 'Admin'">{{ record.updatedAt }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-container" *ngIf="!isLoading && !fetchError && (!records || records.length === 0)" style="text-align: center; padding: 40px;">
+      <div class="table-header" style="justify-content: center; flex-direction: column; gap: 10px;">
+        <span style="font-size: 48px;">📂</span>
+        <h2>No Records Found</h2>
+        <p style="color: #718096; margin: 0;">There are currently no verification checks assigned to this profile path.</p>
+      </div>
+    </div>
+
+  </main>
+</div>

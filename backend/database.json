@@ -1,0 +1,72 @@
+{
+  "users": [
+    {
+      "id": "user_srivatsan",
+      "password": "password123",
+      "name": "Srivatsan R",
+      "role": "General User"
+    },
+    {
+      "id": "user_lakshan",
+      "password": "password123",
+      "name": "Lakshan JR",
+      "role": "General User"
+    },
+    {
+      "id": "user_ananya",
+      "password": "password123",
+      "name": "Ananya Sharma",
+      "role": "General User"
+    },
+    {
+      "id": "user_dave",
+      "password": "password123",
+      "name": "David Miller",
+      "role": "General User"
+    },
+    {
+      "id": "admin_melody",
+      "password": "adminsecure",
+      "name": "Melody Fernandez",
+      "role": "Admin"
+    }
+  ],
+  "records": {
+    "user_srivatsan": [
+      { "id": "REC001", "type": "Identity Check", "status": "Completed", "updatedAt": "2026-05-20" },
+      { "id": "REC002", "type": "Criminal Background Check", "status": "In Progress", "updatedAt": "2026-05-22" },
+      { "id": "REC003", "type": "Academic Verification", "status": "Completed", "updatedAt": "2026-05-23" },
+      { "id": "REC004", "type": "Previous Employment Verification", "status": "In Progress", "updatedAt": "2026-05-24" },
+      { "id": "REC005", "type": "Global Watchlist Screening", "status": "Completed", "updatedAt": "2026-05-25" },
+      { "id": "REC006", "type": "Professional Reference Check", "status": "Pending", "updatedAt": "2026-05-26" }
+    ],
+    "user_lakshan": [
+      { "id": "REC007", "type": "Identity Check", "status": "Completed", "updatedAt": "2026-05-18" },
+      { "id": "REC008", "type": "Academic Verification", "status": "Pending", "updatedAt": "2026-05-19" },
+      { "id": "REC009", "type": "Credit History Check", "status": "Completed", "updatedAt": "2026-05-21" }
+    ],
+    "user_ananya": [
+      { "id": "REC010", "type": "Identity Check", "status": "Completed", "updatedAt": "2026-05-15" },
+      { "id": "REC011", "type": "Criminal Background Check", "status": "Completed", "updatedAt": "2026-05-16" },
+      { "id": "REC012", "type": "10-Panel Drug Screening", "status": "Completed", "updatedAt": "2026-05-17" }
+    ],
+    "user_dave": [
+      { "id": "REC013", "type": "Identity Check", "status": "In Progress", "updatedAt": "2026-05-25" }
+    ],
+    "admin_view_all": [
+      { "id": "REC001", "user": "Srivatsan R", "type": "Identity Check", "status": "Completed" },
+      { "id": "REC002", "user": "Srivatsan R", "type": "Criminal Background Check", "status": "In Progress" },
+      { "id": "REC003", "user": "Srivatsan R", "type": "Academic Verification", "status": "Completed" },
+      { "id": "REC004", "user": "Srivatsan R", "type": "Previous Employment Verification", "status": "In Progress" },
+      { "id": "REC005", "user": "Srivatsan R", "type": "Global Watchlist Screening", "status": "Completed" },
+      { "id": "REC006", "user": "Srivatsan R", "type": "Professional Reference Check", "status": "Pending" },
+      { "id": "REC007", "user": "Lakshan JR", "type": "Identity Check", "status": "Completed" },
+      { "id": "REC008", "user": "Lakshan JR", "type": "Academic Verification", "status": "Pending" },
+      { "id": "REC009", "user": "Lakshan JR", "type": "Credit History Check", "status": "Completed" },
+      { "id": "REC010", "user": "Ananya Sharma", "type": "Identity Check", "status": "Completed" },
+      { "id": "REC011", "user": "Ananya Sharma", "type": "Criminal Background Check", "status": "Completed" },
+      { "id": "REC012", "user": "Ananya Sharma", "type": "10-Panel Drug Screening", "status": "Completed" },
+      { "id": "REC013", "user": "David Miller", "type": "Identity Check", "status": "In Progress" }
+    ]
+  }
+}
